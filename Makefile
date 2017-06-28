@@ -5,7 +5,7 @@
 
 # obj-m    := chardev_ioctl.o
 # chardev_ioctl-objs := chardev.o ioctl.o
-obj-m    := apiTimer.o
+obj-m    := interrupt.o
 
 KDIR    := /lib/modules/$(shell uname -r)/build
 PWD    := $(shell pwd)
@@ -14,7 +14,7 @@ default:
 	$(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules
 
 clean:
-	rm -f apiTimer.mod.c apiTimer.mod.o apiTimer.ko apiTimer.o
+	rm -f interrupt.mod.c interrupt.mod.o interrupt.ko int.o
 	rm -f modules.order Module.symvers
 	rm -f .??*cmd
 	rm -rf .tmp_versions
